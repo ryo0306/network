@@ -1,0 +1,29 @@
+body{
+	margin: 40px;
+	background-color: #CFF7FF;
+}
+
+input{
+	height: 30px;
+	padding:10px;
+}
+
+#message{
+	width: 500px;
+}
+
+#sendmessage{
+	height: 50px;
+	width: 100px;
+}
+
+ul{
+	list-style-type: none;
+	margin: none;
+	padding: none;
+}
+.message{
+	border-bottom: 1px solid #FFF;
+	padding: 5px;
+	margin: 2px;
+}
