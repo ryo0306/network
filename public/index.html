@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-
-	<head>
-		<meta charset="UTF-8">
-		<title>はじめてのHTML</title>
-		<link rel="stylesheet"type="text/css"href="./style.css">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	</head>
-	<body>
-	<div class "inputArea">
-		<!--placeholderは入力したらtextが消える -->
-		<input type="text" id="name"placeholder="名前（山田）">
-		<input type="text" id="message"placeholder="言いたい事を書こう！">
-		<button id="sendmessage">送信</button>
-	</div>
-	<div class="messageArea">
-		<ul id="messages">
-			<li class="message">吉田:ああ</li>
-			<li class="message">山田:ああ</li>
-			<li class="message">吉田:なんだい</li>
-			<li class="message">山田:おい</li>
-		</ul>
-    <p><IMG src="rem2.gif" border="3"></p>
-	<script type="text/javascript"src="./app.js"></script>
-	</body>
+  <head>
+    <title>はじめてのHTML??</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <div class="inputArea">
+      <input type="text" id="name" placeholder="名前（山田）" />
+      <input type="text" id="message" placeholder="言いたいことを書こう" />
+      <button id="sendMessage">送信</button>
+    </div>
+    <div class="messageArea">
+      <ul id="messages">
+        <!--li class="message">吉田：夜は墓場で運動会ともいうけどな</li>
+        <li class="message">山田：結婚は人生の墓場なの？</li>
+        <li class="message">吉田：なんだい父さん？</li>
+        <li class="message">山田：おい、きたろう</li-->
+      </ul>
+    </div>
+	<IMG src="rem.gif" border="3">
+    <script type="text/javascript" src="./client.js"></script>
+  </body>
 </html>

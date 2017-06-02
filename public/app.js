@@ -1,52 +1,37 @@
-$('#sendmessage').click(sendMessage);
+$('#sendMessage').click(sendMessage);
 
 function sendMessage(){
-	var name = $('#name').val();
-	var message = $('#message').val();
-	console.log(name +':'+ message);
-	if(!name || !message){
-		return;
-	}
-	$.ajax({
-		url: '/messages',
-		method: 'POST',
-		data: JSON.stringify({name: name, message: message}),
-		contentType: 'application/json',
-		success: function(response){
-			console.log(name + ':' + message);
-		}
-	});
+  var name = $('#name').val();
+  var message = $('#message').val();
+  if (!name || !message) {
+    return;
+  }
+  $.ajax({
+    url: '/messages',
+    method: 'POST',
+    data: JSON.stringify({name: name, message: message}),
+    contentType: 'application/json',
+    success: function(response){
+      console.log(name + ":" + message);
+    }
+  });
 }
 
-setInterval(readMessage,1000);
+setInterval(readMessage, 1000);
 
 function readMessage(){
-	$.ajax({
-		url: '/messages',
-		method: 'GET',
-		success: function(response){
-			console.log(response);
-		}
-,	})
+  $.ajax({
+    url: '/messages',
+    method: 'GET',
+    success: function(response) {
+      $('#messages').empty();
+      for (var i = 0, l = response.length; i < l; i++){
+        var message = document.createElement('li');
+        message.className = 'message';
+        message.innerText = response[i].name + ":" + response[i].message;
+        $('#messages').prepend(message);
+      }
+    }
+  });
 }
 
-
-/*document.getElementById('startButton').addEventListener('click',function(){
-	$.ajax({
-		method: 'GET',
-		url: '/scream',
-		success: function(response){
-			$('#highlight').text(response);
-		}
-	});
-});
-
-setInterval(function(){
-	$.ajax({
-		method: 'GET',
-		url: '/now',
-		success: function(response){
-		$('#highlight').text(response);	
-		}
-	})
-},1);*/
